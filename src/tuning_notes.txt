@@ -1,0 +1,278 @@
+Reflection
+==========
+
+Tried manual tuning from some guessed value, but that failed to get the car moving even a few seconds.  Then started with the values from the class lectures.  That was better.  Then did manual tuning. Tried to make it quantitative (records below) but later just went by feel.
+
+* Kp: After struggling with too high of a KP for a while, I landed on 0.25. Higher values made the turns aggressive and unstable.
+* Ki: Kept this low.  Tried increasing it a bit, but causes instability
+* Kd: Kept this value high to try and dampen out the oscilations.
+
+
+
+Tuning Notes
+============
+
+  double Kp = 0.02;
+  double Ki = 0.004;
+  double Kd = 3.0;
+step 300: 1.53
+
+  double Kp = 0.04;
+  double Ki = 0.004;
+  double Kd = 3.0;
+step 300: 1.13
+
+  double Kp = 0.06;
+  double Ki = 0.004;
+  double Kd = 3.0;
+step 300: 0.655
+
+  double Kp = 0.10;
+  double Ki = 0.004;
+  double Kd = 3.0;
+step 300: 0.44
+
+  double Kp = 0.50;
+  double Ki = 0.004;
+  double Kd = 3.0;
+step 300: 0.095
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 3.0;
+step 400: 0.0788
+Move to Kd
+
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 4.0;
+Step 400: 0.0559
+
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 6.0;
+Step 400: 0.062
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 5.0;
+Step 400: 0.056
+*** BEST ***
+Off road
+
+  double Kp = 0.02;
+  double Ki = 0.004;
+  double Kd = 3.0;
+step 400: 1.888
+back to lecture 
+
+  double Kp = 1.0;
+  double Ki = 0.008;
+  double Kd = 4.0;
+step 400: 0.040
+*** BEST ***
+Off road later
+
+  double Kp = 1.0;
+  double Ki = 0.008;
+  double Kd = 5.0;
+Increase Kd to decrease oscillation?
+step 400: 0.0668
+
+  double Kp = 1.0;
+  double Ki = 0.010;
+  double Kd = 4.0;
+step 400: 0.18
+
+  double Kp = 1.0;
+  double Ki = 0.006;
+  double Kd = 4.0;
+step 400: 0.22
+No help. Move to Kp
+
+  double Kp = 0.8;
+  double Ki = 0.008;
+  double Kd = 4.0;
+step 400: 0.14
+
+  double Kp = 1.2;
+  double Ki = 0.008;
+  double Kd = 4.0;
+step 400: 0.5
+
+  double Kp = 1.0;
+  double Ki = 0.008;
+  double Kd = 4.0;
+Redo best
+step 400: 0.15
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 5.0;
+***Redo near best***
+step 400: 0.059
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 6.0;
+step 400: 0.10
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 4.0;
+step 400: 0.10
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 5.5;
+around 0.10
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 4.5;
+step 400: 0.09
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 5.25;
+step 400: 0.10
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 4.75;
+step 400: 0.10
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 5;
+redo best again
+step 400: 
+Now with Windows simulator
+  double Kp = 0.05;
+  double Ki = 0.001;
+  double Kd = 0.04;
+step 170: 1.3814
+
+
+  double Kp = 0.04;
+  double Ki = 0.001;
+  double Kd = 0.04;
+step: 1.28
+
+  double Kp = 0.01;
+  double Ki = 0.001;
+  double Kd = 0.04;
+step 170: 0.79
+**BEST**
+Move to Kd
+
+
+  double Kp = 0.01;
+  double Ki = 0.001;
+  double Kd = 0.02;
+Step 170: 1.05
+
+
+  double Kp = 0.01;
+  double Ki = 0.001;
+  double Kd = 0.06;
+Step 170: 0.77
+**BEST**
+
+  double Kp = 0.01;
+  double Ki = 0.001;
+  double Kd = 0.10;
+  pid.Init(Kp,Ki,Kd);
+Step 170: 0.62
+**BEST**
+
+
+  double Kp = 0.02;
+  double Ki = 0.001;
+  double Kd = 0.10;
+Step 170: .705
+
+
+  double Kp = 0.005;
+  double Ki = 0.001;
+  double Kd = 0.10;
+Step 170: 0.89
+
+  double Kp = 0.015;
+  double Ki = 0.001;
+  double Kd = 0.10;
+Step 170: 0.85
+
+  double Kp = 0.01;
+  double Ki = 0.001;
+  double Kd = 0.10;
+Repeat line 38
+step 170: 0.659
+Move back to Kd
+
+
+  double Kp = 0.01;
+  double Ki = 0.001;
+  double Kd = 0.50;
+Step 170: 0.65
+
+  double Kp = 0.01;
+  double Ki = 0.001;
+  double Kd = 0.20;
+Step 170: 0.855
+
+
+
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 5;
+step 700: 0.00697
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 4;
+step 600: 0.0088
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 6;
+step 700: 0.0061
+** BEST **
+
+  double Kp = 1.0;
+  double Ki = 0.004;
+  double Kd = 7;
+step 700: 0.0073
+
+  double Kp = 0.8;
+  double Ki = 0.004;
+  double Kd = 6;
+0.0066
+
+  double Kp = 1.2;
+  double Ki = 0.004;
+  double Kd = 6;
+0.00728
+
+  double Kp = 1.1;
+  double Ki = 0.004;
+  double Kd = 6;
+0.00629
+
+  double Kp = 1.0;
+  double Ki = 0.008;
+  double Kd = 6;
+Unstable early
+
+  double Kp = 0.5;
+  double Ki = 0.004;
+  double Kd = 6;
+Much better at difficult turn
+
+  double Kp = 0.25;
+  double Ki = 0.004;
+  double Kd = 6;
+Works!

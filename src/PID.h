@@ -13,9 +13,13 @@ public:
   /*
   * Coefficients
   */ 
-  double Kp;
-  double Ki;
-  double Kd;
+  double Kp_;
+  double Ki_;
+  double Kd_;
+
+  double prev_cte;
+  double total_sq_cte;
+  double total_n;
 
   /*
   * Constructor
