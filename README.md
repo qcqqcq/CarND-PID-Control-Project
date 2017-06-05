@@ -1,6 +1,8 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+See src/tuning_notes.txt for notes on how parameters were tuned.
+
 ---
 
 ## Dependencies
